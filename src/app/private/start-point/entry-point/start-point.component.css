@@ -1,3 +1,7 @@
+.anchorLinks{
+    margin-bottom: 10px;
+}
+
 .container{
     display: flex;
     justify-content: space-between;

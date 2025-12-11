@@ -1,0 +1,13 @@
+.loader{
+    display: flex;
+    align-items: center;
+}
+
+.loginForm{
+    display: flex;
+    align-items: center;
+}
+
+.register-button{
+    margin-top: 3px;
+}

@@ -1,0 +1,34 @@
+<p>pop-up works!</p>
+
+<h2 mat-dialog-title>Edit User</h2>
+<!-- <form [formGroup]="form" (ngSubmit)="save()">
+  <mat-form-field>
+    <mat-label>First Name</mat-label>
+    <input matInput formControlName="firstName">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Last Name</mat-label>
+    <input matInput formControlName="lastName">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Age</mat-label>
+    <input matInput type="number" formControlName="age">
+  </mat-form-field>
+
+  <button mat-button type="submit">Save</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+</form> -->
+
+
+<form [formGroup]="form" (ngSubmit)="save()">
+    <ng-container *ngFor="let f of data.fields">
+        <mat-form-field>
+            <mat-label>{{f.displayName}}</mat-label>
+            <input matInput formControlName="{{f.name}}">
+        </mat-form-field>
+    </ng-container>
+    <button mat-button type="submit">Save</button>
+    <button mat-button mat-dailog-close>Cancel</button>
+</form>

@@ -1,0 +1,13 @@
+<p>profile works!</p>
+
+<div *ngIf="userProfile; else noProfile">
+
+   <span style="font-weight: bold;">Name:-- </span>{{userProfile.firstName}} {{userProfile.lastName}}
+</div>
+
+<ng-template #noProfile>
+    <div >
+    <mat-spinner></mat-spinner>
+    </div>
+</ng-template>
+

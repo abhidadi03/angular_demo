@@ -1,0 +1,9 @@
+<p>customers works!</p>
+
+<app-common-table
+  [tableData] ="customers"
+  [displayedColumns]="columnNames"
+  [columnHeaders] = "headers"
+  (rowClicked)="fromTheChild($event)"
+>
+</app-common-table>

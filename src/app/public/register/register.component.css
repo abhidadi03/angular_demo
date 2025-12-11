@@ -1,0 +1,15 @@
+.field-spacing{
+    margin-bottom: 24px;
+    /* flex: 1; */
+}
+
+mat-error {
+  font-size: 11px;      
+  line-height: 11px;      
+}
+
+
+.form-row{
+    display: flex;
+    gap: 16px;
+}

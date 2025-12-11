@@ -1,0 +1,55 @@
+<p>login works!</p>
+<div class="loginForm">
+<form [formGroup]="LoginForm" (ngSubmit)="login()">
+    <div>
+        <!-- <input type="text" formControlName="username" placeholder="Enter your username"/><br>
+        <div *ngIf="LoginForm.get('username')?.hasError('required') && LoginForm.get('username')?.touched" class="errorMessage">
+            Username is required.
+        </div>
+        <div *ngIf="LoginForm.get('username')?.hasError('minlength')">
+            Username should be minimum 5 characters.
+        </div> -->
+        <mat-form-field appearance="outline"  class="full-width">
+            <mat-label>Username</mat-label>
+            <input matInput type="email" formControlName="username" placeholder="Enter your username"/>
+            <mat-error *ngIf="LoginForm.get('username')?.hasError('required')">
+                Username is required.
+            </mat-error>
+            <mat-error *ngIf="LoginForm.get('username')?.hasError('minlength')">
+                Username should be minimum 5 characters.
+            </mat-error>
+        </mat-form-field><br>
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password" placeholder="Enter your password"/>
+            <mat-error *ngIf="LoginForm.get('password')?.hasError('required')">
+                Password is required.
+            </mat-error>
+            <mat-error *ngIf="LoginForm.get('password')?.hasError('minlength')">
+                Password should be minimum 5 characters.
+            </mat-error>
+            <mat-error *ngIf="LoginForm.get('password')?.hasError('pattern')">
+                Ex for password(Abcd1234!)
+            </mat-error>
+        </mat-form-field>
+         <mat-error *ngIf="errMessage">
+                {{ errMessage  }}
+            </mat-error>
+        <!-- <input type="password" formControlName="password" placeholder="Enter your password"/><br>
+        <div *ngIf="LoginForm.get('password')?.hasError('required') && LoginForm.get('password')?.touched" class="errorMessage">
+            Password is required.
+        </div>
+        <div *ngIf="LoginForm.get('password')?.hasError('minlength') && LoginForm.get('password')?.touched" class="errorMessage">
+            Password should be minimum 5 characters.
+        </div> -->
+    </div>
+    <button mat-raised-button color="primary" type="submit" [disabled]="LoginForm.invalid">  Login</button>
+    <div *ngIf="isLoading" class="loader">
+        <mat-spinner diameter="100"></mat-spinner>
+        </div>
+        <br>
+    <button class="register-button" mat-raised-button colour="primary" (click)="redirectToregister()">Register</button>
+    <!-- <button type="submit" [disabled]="LoginForm.invalid">Login</button> -->
+</form>
+
+</div>
