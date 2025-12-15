@@ -3,6 +3,7 @@ import { UsersService } from '../../users.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { PopUpComponent } from '../pop-up/pop-up.component';
 import { MatDialog } from '@angular/material/dialog';
+import { map } from 'rxjs';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -36,15 +37,33 @@ export class UsersComponent {
   }
 
   loadUsers(){
-    this.userService.getUsers().subscribe({
-      next:(res)=>{
+
+    // this.userService.getUsers().subscribe({
+    //   next:(res)=>{
+    //     this.users = res.users;
+    //     console.log('Users data', res);
+    //   },
+    //   error:(err)=>{
+    //     console.error('Failed to load users', err);
+    //   }
+    // });
+    this.userService.getUsers().pipe(
+      map(res =>{
+        console.log('users in resposne',res)
+        res.users= res.users.filter((u:any) => u.age>30);
+        return res;
+
+      })
+    ).subscribe({
+      next:(res) =>{
+                    
         this.users = res.users;
-        console.log('Users data', res);
+        console.log('usererererere',this.users)
       },
-      error:(err)=>{
-        console.error('Failed to load users', err);
+      error:(err) => {
+        console.log('failed to load users',err);
       }
-    });
+    })
   }
   // fromTheChild(row:any){
   //   this.showForm = true;

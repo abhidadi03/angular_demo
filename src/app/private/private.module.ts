@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PopUpComponent } from './pop-up/pop-up.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import {MatTabsModule} from '@angular/material/tabs';
 const routes:Routes =[
   {
     path:'',component:StartPointComponent,
@@ -38,6 +39,7 @@ const routes:Routes =[
     ReactiveFormsModule,
     MatDialogModule,
     MatButtonModule,
+    MatTabsModule,
     RouterModule.forChild(routes)
   ],
   exports:[RouterModule]

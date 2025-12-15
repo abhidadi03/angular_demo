@@ -11,6 +11,8 @@ import {MatTableModule} from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { TranslateModule } from '@ngx-translate/core';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { TranslateModule } from '@ngx-translate/core';
     MatSortModule,
     MatSortModule,
     MatPaginatorModule,
-    TranslateModule
+    TranslateModule,
+    MatProgressBarModule,
+    MatSlideToggleModule
     // BrowserAnimationsModule
   ],
   exports:[
@@ -42,7 +46,9 @@ import { TranslateModule } from '@ngx-translate/core';
     CommonTableComponent,
     MatTableModule,
     MatPaginatorModule,
-    TranslateModule
+    TranslateModule,
+    MatProgressBarModule,
+    MatSlideToggleModule
     // BrowserAnimationsModule
   ]
 })

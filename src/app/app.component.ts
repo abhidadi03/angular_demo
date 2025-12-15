@@ -24,13 +24,13 @@ export class AppComponent {
     });
   }
   title = 'my-app';
-  getLang(event: Event):string{
-    return (event.target as HTMLSelectElement).value;
+  // getLang(event: Event):string{
+  //   return (event.target as HTMLSelectElement).value;
 
-  }
-  switchLang(lang:string){
-    this.translate.use(lang);
-  }
+  // }
+  // switchLang(lang:string){
+  //   this.translate.use(lang);
+  // }
   redirectToLogin(){
     console
     this.router.navigate(['/login']);

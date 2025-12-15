@@ -21,6 +21,7 @@ export class PopUpComponent {
   console.log('in the comon fields',this.data.value);
   this.data.fields.forEach((f:any) => {
     group[f.name] = [this.data.value ? this.data.value[f.name] : ''];
+    // debugger;
   });
   console.log('groupppp------',group);
   this.form = this.fb.group(group);
@@ -37,7 +38,9 @@ export class PopUpComponent {
         modifed[key] = updated[key]
       }
     }
+
     console.log('modified valueeeeeeeee',modifed);
     this.dialogRef.close(this.form.value);
   }
 }
+

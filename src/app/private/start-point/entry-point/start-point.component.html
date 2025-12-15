@@ -6,10 +6,15 @@
   <a routerLink="/dashboard/ship-da/customers">{{'Customers' | translate}}</a>   |
   <a routerLink="/login" (click)="Logout()">{{'Logout' | translate}}</a>
 </nav>
-
 <select (change)="switchLang(getLang($event))">
   <option value="en">English</option>
   <option value="fr">French</option>
 </select>
+<!-- <button (click)="toggleTheme()">Toggole Theme</button> -->
+ <mat-slide-toggle
+  (change)="toggleTheme()"
+  >
+  Dark Mode
+</mat-slide-toggle>
 </div>
-<router-outlet></router-outlet>
+<router-outlet class="router-view"></router-outlet>

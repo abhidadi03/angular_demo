@@ -5,4 +5,12 @@
 .container{
     display: flex;
     justify-content: space-between;
+    /* background-color: black; */
+    background-color: var(--bg-color);
+}
+.mat-typography{
+    background-color: black;
+}
+body{
+    background-color: var(--bg-color);
 }

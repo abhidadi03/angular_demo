@@ -32,19 +32,18 @@
     <mat-spinner></mat-spinner>
 </ng-template> -->
 
-
+<div *ngIf="users.length > 0; else noUsers">
 <app-common-table 
   [tableData]="users"
   [displayedColumns]="columnNames"
   [columnHeaders] = "headers"
   (rowClicked)= "fromTheChild($event)"
   >
-
 </app-common-table>
-<!-- <div *ngIf="showForm">
-  <form [formGroup]="userForm">
-    <input formControlName="firstName">
-    <input formControlName="lastName">
-    <input formControlName="age">
-  </form>
-  </div> -->
+</div>
+<ng-template #noUsers>
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+
+  <!-- <mat-spinner></mat-spinner> -->
+</ng-template>
+
